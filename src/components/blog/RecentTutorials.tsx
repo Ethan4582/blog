@@ -7,9 +7,9 @@ import { recentTutorials } from "@/src/lib/mockData";
 
 export default function RecentTutorials() {
    return (
-      <section className="px-10 py-20 pb-20 border-t border-border/10">
-         <div className="flex items-center justify-between mb-12">
-            <h2 className="text-4xl font-black text-foreground tracking-tight font-serif">Recent Tutorials</h2>
+      <section className="px-10 py-12 pb-12 border-t border-border/10">
+         <div className="flex items-center justify-between mb-8">
+            <h2 className="text-3xl font-black text-foreground tracking-tight font-serif">Recent Tutorials</h2>
             <Link
                href="/gallery"
                className="text-primary hover:text-primary/70 transition-colors text-[13px] font-bold uppercase tracking-widest border-b border-transparent hover:border-primary/30 pb-0.5"

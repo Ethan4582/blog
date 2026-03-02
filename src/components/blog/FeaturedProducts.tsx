@@ -6,10 +6,10 @@ import { featuredProducts } from "@/src/lib/mockData";
 
 export default function FeaturedProducts() {
    return (
-      <section className="px-10 py-20 pb-20 border-t border-border/10">
-         <div className="mb-12">
-            <h2 className="text-4xl font-black text-foreground tracking-tight font-serif">
-               My Other Alternative Products <span className="text-primary/70">You Might Like</span>
+      <section className="px-10 py-12 pb-12 border-t border-border/10">
+         <div className="mb-8">
+            <h2 className="text-3xl font-black text-foreground tracking-tight font-serif">
+               My Other <span className="text-primary/70">Alternative Products</span>
             </h2>
          </div>
 

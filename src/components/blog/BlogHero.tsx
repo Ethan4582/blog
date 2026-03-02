@@ -17,9 +17,9 @@ export default function BlogHero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="max-w-4xl"
+            className="w-full"
          >
-            <h1 className="text-5xl md:text-7xl font-black text-foreground mb-12 tracking-tight leading-[1.1] font-serif">
+            <h1 className="text-3xl md:text-4xl font-black text-foreground mb-8 tracking-tight leading-snug font-serif line-clamp-2 max-w-full">
                Welcome to my blog <span className="inline-block animate-pulse">🔴</span> I'm Ashirvad and here I document my latest explorations.
             </h1>
 

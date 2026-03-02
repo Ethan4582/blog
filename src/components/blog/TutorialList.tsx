@@ -7,15 +7,15 @@ export default function TutorialList() {
    const categories = Array.from(new Set(allTutorials.map(t => t.category)));
 
    return (
-      <section className="px-10 py-20 pb-40 border-t border-border/10">
-         <h2 className="text-6xl font-black text-foreground mb-20 tracking-tight leading-tight font-serif text-center">
+      <section className="px-10 py-12 pb-24 border-t border-border/10">
+         <h2 className="text-4xl font-black text-foreground mb-12 tracking-tight leading-tight font-serif">
             All Tutorials
          </h2>
 
-         <div className="max-w-4xl mx-auto space-y-24">
+         <div className="w-full space-y-16">
             {categories.map((cat) => (
-               <div key={cat} className="space-y-10">
-                  <h3 className="text-3xl font-black text-primary/80 tracking-tight font-serif">{cat}</h3>
+               <div key={cat} className="space-y-6">
+                  <h3 className="text-2xl font-black text-primary/80 tracking-tight font-serif">{cat}</h3>
 
                   <div className="space-y-2 transition-all duration-500">
                      {allTutorials
@@ -27,14 +27,14 @@ export default function TutorialList() {
                               whileInView={{ opacity: 1, x: 0 }}
                               viewport={{ once: true, margin: "-10%" }}
                               transition={{ delay: idx * 0.05 }}
-                              className="group flex items-center justify-between py-5 border-b border-border/10 relative overflow-hidden cursor-pointer"
+                              className="group flex items-center justify-between py-3 border-b border-border/10 relative overflow-hidden cursor-pointer"
                            >
-                              <span className="text-[14px] text-muted-foreground/60 group-hover:text-muted-foreground font-mono transition-colors">
-                                 {tutorial.date}
+                              <span className="text-xl font-black text-foreground/80 group-hover:text-primary transition-all duration-300 font-serif tracking-tight pr-4">
+                                 {tutorial.title}
                               </span>
 
-                              <span className="text-2xl font-black text-foreground/80 group-hover:text-primary transition-all duration-300 font-serif tracking-tight pr-4">
-                                 {tutorial.title}
+                              <span className="text-[13px] text-muted-foreground/50 group-hover:text-muted-foreground font-mono transition-colors">
+                                 {tutorial.date}
                               </span>
 
                               {/* Scroll Underline Animation */}
