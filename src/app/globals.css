@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+/* ─── Fonts ─────────────────────────────────────── */
+:root {
+  --font-inter: "Inter", sans-serif;
+
+  /* Brand */
+  --brand: #c8ff00;
+  --brand-dim: #a0d900;
+
+  /* BG */
+  --bg-base: #0a0a0a;
+  --bg-surface: #111111;
+  --bg-elevated: #161616;
+
+  /* Text */
+  --text-primary: #f0f0f0;
+  --text-muted: rgba(240, 240, 240, 0.45);
+  --text-faint: rgba(240, 240, 240, 0.22);
+
+  /* Borders */
+  --border: rgba(255, 255, 255, 0.06);
+  --border-hover: rgba(255, 255, 255, 0.12);
+}
+
+/* ─── Reset / Base ───────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Prevent native scroll conflicts with Lenis */
+html {
+  scroll-behavior: auto !important;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-inter), "Inter", system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ─── Custom Scrollbar ───────────────────────────── */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 99px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Named class for sidebar scrollbars */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 99px;
+}
+
+/* ─── Selection ──────────────────────────────────── */
+::selection {
+  background: rgba(200, 255, 0, 0.2);
+  color: #c8ff00;
+}
+
+/* ─── Focus outline ──────────────────────────────── */
+:focus-visible {
+  outline: 2px solid rgba(200, 255, 0, 0.5);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ─── Smooth scroll for in-page anchors ─────────── */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    /* Lenis handles this; native scroll-behavior MUST be auto */
+    scroll-behavior: auto !important;
+  }
+}
