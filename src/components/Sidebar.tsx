@@ -26,7 +26,7 @@ export default function Sidebar() {
    };
 
    return (
-      <aside className="w-[260px] min-w-[260px] h-[calc(100vh-65px)] sticky top-[65px] overflow-y-auto border-r border-white/[0.06] bg-[#0a0a0a]/50 backdrop-blur-sm custom-scrollbar">
+      <aside className="w-[260px] min-w-[260px] h-[calc(100vh-65px)] sticky top-[65px] overflow-y-auto border-r border-border/30 bg-background/50 backdrop-blur-md custom-scrollbar">
          <nav className="py-5 px-4">
             {blogData.map((group, groupIndex) => (
                <motion.div
@@ -40,10 +40,10 @@ export default function Sidebar() {
                   <button
                      onClick={() => toggleGroup(group.slug)}
                      className={clsx(
-                        "w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-[13px] font-semibold tracking-wide uppercase transition-all duration-200 cursor-pointer group",
+                        "w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-[13px] font-bold tracking-wide uppercase transition-all duration-200 cursor-pointer group font-sans",
                         openGroups[group.slug]
-                           ? "text-white/90 bg-white/[0.04]"
-                           : "text-white/50 hover:text-white/70 hover:bg-white/[0.03]"
+                           ? "text-foreground bg-primary/10"
+                           : "text-foreground/50 hover:text-foreground/80 hover:bg-muted/30"
                      )}
                   >
                      <span>{group.title}</span>
@@ -51,7 +51,7 @@ export default function Sidebar() {
                         animate={{ rotate: openGroups[group.slug] ? 180 : 0 }}
                         transition={{ duration: 0.25, ease: "easeInOut" }}
                      >
-                        <ChevronDown className="w-3.5 h-3.5 text-white/30 group-hover:text-white/50 transition-colors" />
+                        <ChevronDown className="w-3.5 h-3.5 text-foreground/30 group-hover:text-foreground/50 transition-colors" />
                      </motion.div>
                   </button>
 
@@ -65,7 +65,7 @@ export default function Sidebar() {
                            transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
                            className="overflow-hidden"
                         >
-                           <div className="ml-2 mt-0.5 border-l border-white/[0.06] pl-2">
+                           <div className="ml-2 mt-0.5 border-l border-border/20 pl-2">
                               {group.pages.map((page) => {
                                  const href = `/blog/${group.slug}/${page.slug}`;
                                  const isActive = pathname === href;
@@ -75,16 +75,16 @@ export default function Sidebar() {
                                        key={page.slug}
                                        href={href}
                                        className={clsx(
-                                          "block px-3 py-2 rounded-md text-[13px] transition-all duration-200 relative",
+                                          "block px-3 py-2 rounded-md text-[13px] transition-all duration-200 relative font-sans",
                                           isActive
-                                             ? "text-[#c8ff00] bg-[#c8ff00]/[0.06] font-medium"
-                                             : "text-white/45 hover:text-white/75 hover:bg-white/[0.03]"
+                                             ? "text-primary bg-primary/5 font-bold"
+                                             : "text-foreground/50 hover:text-foreground/80 hover:bg-muted/20"
                                        )}
                                     >
                                        {isActive && (
                                           <motion.div
                                              layoutId="sidebar-active"
-                                             className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-[10.5px] w-[3px] h-4 bg-[#c8ff00] rounded-full"
+                                             className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-[10.5px] w-[3px] h-4 bg-primary rounded-full"
                                              transition={{ type: "spring", stiffness: 350, damping: 30 }}
                                           />
                                        )}

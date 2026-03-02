@@ -49,20 +49,20 @@ export default function TableOfContents({ sections }: TableOfContentsProps) {
    };
 
    return (
-      <aside className="w-[220px] min-w-[220px] h-[calc(100vh-65px)] sticky top-[65px] overflow-y-auto py-8 px-5 custom-scrollbar">
+      <aside className="w-[220px] min-w-[220px] h-[calc(100vh-65px)] sticky top-[65px] overflow-y-auto py-8 px-5 custom-scrollbar font-sans">
          {/* Progress Bar */}
          <div className="mb-6">
             <div className="flex items-center justify-between mb-2">
-               <span className="text-[11px] font-semibold text-white/30 uppercase tracking-widest">
+               <span className="text-[11px] font-bold text-foreground/30 uppercase tracking-widest">
                   Progress
                </span>
-               <span className="text-[11px] font-mono text-white/25">
+               <span className="text-[11px] font-mono text-foreground/25">
                   {Math.round(scrollProgress * 100)}%
                </span>
             </div>
-            <div className="h-[3px] bg-white/[0.06] rounded-full overflow-hidden">
+            <div className="h-[3px] bg-border/20 rounded-full overflow-hidden">
                <motion.div
-                  className="h-full bg-gradient-to-r from-[#c8ff00] to-[#a0d900] rounded-full"
+                  className="h-full bg-gradient-to-r from-primary to-primary/60 rounded-full"
                   style={{ width: `${scrollProgress * 100}%` }}
                   transition={{ duration: 0.1 }}
                />
@@ -70,14 +70,14 @@ export default function TableOfContents({ sections }: TableOfContentsProps) {
          </div>
 
          {/* Table of Contents heading */}
-         <h3 className="text-[11px] font-semibold text-white/30 uppercase tracking-widest mb-4">
+         <h3 className="text-[11px] font-bold text-foreground/30 uppercase tracking-widest mb-4">
             On this page
          </h3>
 
          {/* Section Links */}
          <div className="relative">
             {/* Vertical line */}
-            <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-white/[0.06] rounded-full" />
+            <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-border/20 rounded-full" />
 
             {sections.map((section) => {
                const isActive = activeSection === section.id;
@@ -88,14 +88,14 @@ export default function TableOfContents({ sections }: TableOfContentsProps) {
                      className={clsx(
                         "relative w-full text-left pl-4 py-2 text-[13px] transition-all duration-200 block cursor-pointer",
                         isActive
-                           ? "text-[#c8ff00] font-medium"
-                           : "text-white/35 hover:text-white/60"
+                           ? "text-primary font-bold"
+                           : "text-foreground/40 hover:text-foreground/70"
                      )}
                   >
                      {isActive && (
                         <motion.div
                            layoutId="toc-active"
-                           className="absolute left-0 top-1/2 -translate-y-1/2 w-[2px] h-5 bg-[#c8ff00] rounded-full"
+                           className="absolute left-0 top-1/2 -translate-y-1/2 w-[2px] h-5 bg-primary rounded-full transition-all duration-500"
                            transition={{ type: "spring", stiffness: 350, damping: 30 }}
                         />
                      )}

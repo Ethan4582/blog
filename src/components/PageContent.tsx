@@ -25,7 +25,7 @@ const sectionVariants = {
    visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
+      transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] as any },
    },
 };
 
@@ -47,12 +47,12 @@ export default function PageContent({ group, page }: PageContentProps) {
          className="flex-1 min-w-0 px-10 py-12"
       >
          {/* Breadcrumb */}
-         <motion.div variants={sectionVariants} className="flex items-center gap-2 mb-8">
-            <span className="text-[12px] text-white/25 font-medium uppercase tracking-widest">
+         <motion.div variants={sectionVariants} className="flex items-center gap-2 mb-8 font-sans">
+            <span className="text-[12px] text-muted-foreground/60 font-bold uppercase tracking-widest">
                {group.title}
             </span>
-            <span className="text-white/15 text-xs">/</span>
-            <span className="text-[12px] text-[#c8ff00]/70 font-medium uppercase tracking-widest">
+            <span className="text-muted-foreground/30 text-xs">/</span>
+            <span className="text-[12px] text-primary/80 font-bold uppercase tracking-widest">
                {page.title}
             </span>
          </motion.div>
@@ -60,16 +60,16 @@ export default function PageContent({ group, page }: PageContentProps) {
          {/* Page Title */}
          <motion.h1
             variants={sectionVariants}
-            className="text-4xl md:text-5xl font-bold text-white mb-3 tracking-tight leading-tight"
+            className="text-4xl md:text-6xl font-black text-foreground mb-4 tracking-tight leading-tight font-serif"
          >
             {page.title}
          </motion.h1>
-         <motion.p variants={sectionVariants} className="text-white/40 text-base mb-14 leading-relaxed max-w-xl">
+         <motion.p variants={sectionVariants} className="text-muted-foreground text-lg mb-14 leading-relaxed max-w-2xl font-sans">
             Placeholder overview for {page.title} under {group.title}. Scroll down to explore all sections.
          </motion.p>
 
          {/* Divider */}
-         <motion.div variants={sectionVariants} className="h-px bg-gradient-to-r from-white/[0.08] via-white/[0.03] to-transparent mb-14" />
+         <motion.div variants={sectionVariants} className="h-px bg-gradient-to-r from-primary/30 via-primary/5 to-transparent mb-14" />
 
          {/* Sections */}
          {page.sections.map((section, index) => (
@@ -77,37 +77,37 @@ export default function PageContent({ group, page }: PageContentProps) {
                key={section.id}
                id={section.id}
                variants={sectionVariants}
-               className="mb-20 scroll-mt-28"
+               className="mb-24 scroll-mt-28"
             >
                {/* Section label */}
-               <div className="flex items-center gap-3 mb-5">
-                  <span className="text-[10px] font-bold text-[#c8ff00]/50 uppercase tracking-[0.2em]">
-                     {String(index + 1).padStart(2, "0")}
+               <div className="flex items-center gap-3 mb-6 font-sans">
+                  <span className="text-[10px] font-black text-primary/60 uppercase tracking-[0.3em]">
+                     Section {String(index + 1).padStart(2, "0")}
                   </span>
-                  <div className="h-px flex-1 bg-white/[0.05]" />
+                  <div className="h-px flex-1 bg-border/20" />
                </div>
 
-               <h2 className="text-2xl font-semibold text-white mb-5 tracking-tight">
+               <h2 className="text-3xl font-bold text-foreground mb-6 tracking-tight font-serif">
                   {section.title}
                </h2>
 
                {/* Info card */}
-               <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-6 mb-6 group hover:border-white/[0.1] hover:bg-white/[0.03] transition-all duration-300">
-                  <div className="flex items-start gap-4">
-                     <div className="w-10 h-10 rounded-lg bg-[#c8ff00]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <div className="w-3 h-3 rounded-full bg-[#c8ff00]/60" />
+               <div className="rounded-2xl border border-border/40 bg-card/40 backdrop-blur-sm p-8 mb-8 group hover:border-primary/30 hover:bg-primary/5 transition-all duration-500 shadow-sm font-sans">
+                  <div className="flex items-start gap-5">
+                     <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center flex-shrink-0 mt-0.5 shadow-lg shadow-primary/20">
+                        <div className="w-2.5 h-2.5 rounded-full bg-primary-foreground" />
                      </div>
                      <div>
-                        <p className="text-[13px] font-semibold text-white/60 mb-1">{section.title}</p>
-                        <p className="text-[13px] text-white/30 leading-relaxed">
-                           This section covers the {section.title.toLowerCase()} topics within {page.title}.
+                        <p className="text-sm font-bold text-foreground mb-1.5">{section.title}</p>
+                        <p className="text-sm text-muted-foreground leading-relaxed max-w-lg">
+                           This section covers the {section.title.toLowerCase()} topics within {page.title}. Detailed documentation and examples follow below.
                         </p>
                      </div>
                   </div>
                </div>
 
                {PLACEHOLDER_PARAS.map((para, pi) => (
-                  <p key={pi} className="text-[14px] text-white/35 leading-7 mb-4">
+                  <p key={pi} className="text-base text-foreground/70 leading-8 mb-6 font-sans">
                      {para}
                   </p>
                ))}

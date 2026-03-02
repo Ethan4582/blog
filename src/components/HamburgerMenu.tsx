@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import Link from "next/link";
 import { X } from "lucide-react";
 
@@ -24,7 +24,7 @@ const socialLinks = [
    { label: "Twitter", href: "#" },
 ];
 
-const containerVariants = {
+const containerVariants: Variants = {
    hidden: { opacity: 0 },
    visible: {
       opacity: 1,
@@ -42,7 +42,7 @@ const containerVariants = {
    },
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
    hidden: { y: 40, opacity: 0 },
    visible: {
       y: 0,
@@ -65,8 +65,7 @@ export default function HamburgerMenu({ isOpen, onClose }: HamburgerMenuProps) {
                animate={{ opacity: 1 }}
                exit={{ opacity: 0 }}
                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-               className="fixed inset-0 z-[999] flex flex-col"
-               style={{ backgroundColor: "#c8ff00" }}
+               className="fixed inset-0 z-[999] flex flex-col bg-primary"
             >
                {/* Close Button */}
                <div className="flex justify-end p-6">
@@ -76,7 +75,7 @@ export default function HamburgerMenu({ isOpen, onClose }: HamburgerMenuProps) {
                      exit={{ scale: 0, rotate: 180 }}
                      transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                      onClick={onClose}
-                     className="w-auto px-6 py-3 rounded-full bg-[#0a0a0a] text-[#c8ff00] font-semibold text-sm tracking-wider flex items-center gap-2 hover:bg-[#1a1a1a] transition-colors cursor-pointer"
+                     className="w-auto px-6 py-3 rounded-full bg-primary-foreground text-primary font-bold text-sm tracking-wider flex items-center gap-2 hover:opacity-90 transition-all cursor-pointer shadow-xl"
                      aria-label="Close menu"
                   >
                      CLOSE
@@ -97,7 +96,7 @@ export default function HamburgerMenu({ isOpen, onClose }: HamburgerMenuProps) {
                         <Link
                            href={item.href}
                            onClick={onClose}
-                           className="block text-[#0a0a0a] text-5xl md:text-7xl font-semibold py-2 md:py-3 hover:translate-x-4 transition-transform duration-300 tracking-tight"
+                           className="block text-primary-foreground text-5xl md:text-8xl font-black py-2 md:py-4 hover:translate-x-6 transition-all duration-500 tracking-tighter font-serif"
                         >
                            {item.label}
                         </Link>
@@ -111,13 +110,13 @@ export default function HamburgerMenu({ isOpen, onClose }: HamburgerMenuProps) {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0 }}
                   transition={{ delay: 0.4, duration: 0.4 }}
-                  className="px-10 md:px-20 pb-10 flex flex-wrap gap-x-16 gap-y-2"
+                  className="px-10 md:px-20 pb-10 flex flex-wrap gap-x-16 gap-y-2 font-sans"
                >
                   {socialLinks.map((link) => (
                      <a
                         key={link.label}
                         href={link.href}
-                        className="text-[#0a0a0a]/70 hover:text-[#0a0a0a] text-base font-medium transition-colors"
+                        className="text-primary-foreground/60 hover:text-primary-foreground text-base font-bold transition-colors uppercase tracking-widest"
                      >
                         {link.label}
                      </a>
