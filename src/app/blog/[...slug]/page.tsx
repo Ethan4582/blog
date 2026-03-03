@@ -49,7 +49,7 @@ export default async function BlogSlugPage({ params }: BlogPageProps) {
       <>
          <PageContent group={group} page={page} post={post} />
          {group.title !== "Getting Started" && (
-            <TableOfContents sections={page.sections} />
+            <TableOfContents sections={post ? post.sections : page.sections} />
          )}
       </>
    );

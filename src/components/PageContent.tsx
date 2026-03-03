@@ -211,9 +211,30 @@ export default function PageContent({ group, page, post }: PageContentProps) {
                         {section.content.map((block, blockIdx) => {
                            // PARAGRAPH
                            if (block.type === "paragraph") {
+                              // Link parser: converts @Name[urlURL] to <a href="URL">Name</a>
+                              const parseLinks = (text: string) => {
+                                 const parts = text.split(/(@\w+\[url[^\]]+\])/g);
+                                 return parts.map((part, i) => {
+                                    const match = part.match(/@(\w+)\[url([^\]]+)\]/);
+                                    if (match) {
+                                       return (
+                                          <a
+                                             key={i}
+                                             href={match[2]}
+                                             target="_blank"
+                                             rel="noopener noreferrer"
+                                             className="text-blue-500 hover:text-blue-600 underline font-medium"
+                                          >
+                                             {match[1]}
+                                          </a>
+                                       );
+                                    }
+                                    return part;
+                                 });
+                              };
                               return (
                                  <p key={blockIdx} className="text-foreground/75 leading-7 text-[16px]">
-                                    {block.text}
+                                    {parseLinks(block.text)}
                                  </p>
                               );
                            }

@@ -6,6 +6,7 @@ export interface Section {
 export interface PageItem {
    title: string;
    slug: string;
+   date?: string;
    sections: Section[];
 }
 
@@ -27,21 +28,27 @@ export interface Tutorial {
    id: string;
    title: string;
    description: string;
+   galleryDescription?: string;
+   demoInstructions?: string;
    date: string;
    tag: string;
    image: string;
    category: string;
+   slug?: string; // Adding slug for linking if needed
 }
 
 export const recentTutorials: Tutorial[] = [
    {
       id: "1",
-      title: "Water Ripple Hover Effect ",
+      title: "Water Ripple Hover Effect",
       description: "Tutorial rebuilding a water ripple hover effect that fluidly distorts text using Three.js, React, and GLSL shaders.",
+      galleryDescription: "Mesmerizing GPU-powered ripples interacting with typography for an organic feel.",
+      demoInstructions: "Move your mouse gently over the canvas to see the water ripple effect in action.",
       date: "March 3, 2026",
       tag: "THREE.JS",
       category: "Three.js",
-      image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=800",
+      image: "https://res.cloudinary.com/dbgee370f/image/upload/v1772525777/Screenshot_2026-03-03_124655_lgc6rs.png",
+      slug: "water-ripple-hover-effect"
    },
 
 ];
@@ -75,28 +82,11 @@ export const blogNavigation: ToggleGroup[] = [
          {
             title: "Introduction",
             slug: "intro",
+            date: "Feb 28, 2026",
             sections: [
                { id: "overview", title: "Overview" },
                { id: "installation", title: "Installation" },
                { id: "quick-start", title: "Quick Start" },
-            ],
-         },
-         {
-            title: "Background",
-            slug: "background",
-            sections: [
-               { id: "history", title: "History" },
-               { id: "motivation", title: "Motivation" },
-               { id: "architecture", title: "Architecture" },
-            ],
-         },
-         {
-            title: "Template",
-            slug: "template",
-            sections: [
-               { id: "basic-template", title: "Basic Template" },
-               { id: "advanced-template", title: "Advanced Template" },
-               { id: "customization", title: "Customization" },
             ],
          },
       ],
@@ -108,6 +98,7 @@ export const blogNavigation: ToggleGroup[] = [
          {
             title: "Water Ripple Hover Effect ",
             slug: "water-ripple-hover-effect",
+            date: "March 3, 2026",
             sections: [
                { id: "initializing-project", title: "Initializing the project" },
                { id: "root-layout", title: "Root Layout Configuration" },

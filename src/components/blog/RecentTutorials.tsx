@@ -18,39 +18,37 @@ export default function RecentTutorials() {
             </Link>
          </div>
 
-         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {recentTutorials.map((t, i) => (
                <motion.div
                   key={t.id}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
+                  transition={{ delay: i * 0.1, duration: 0.5 }}
                   className="group cursor-pointer"
                >
-                  <div className="relative aspect-video rounded-xl overflow-hidden mb-6 shadow-xl shadow-black/5 group-hover:shadow-2xl transition-all duration-500 scale-[1] group-hover:scale-[1.02]">
+                  <div className="relative aspect-video rounded-2xl overflow-hidden mb-6 border border-border/5 bg-muted/20 transition-all duration-500 group-hover:border-primary/20 group-hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)]">
                      <Image
                         src={t.image}
                         alt={t.title}
                         fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                        className="object-cover transition-transform duration-1000 group-hover:scale-105"
                      />
                   </div>
 
-                  <div className="space-y-4">
-                     <div className="flex items-center gap-4 text-[11px] font-black tracking-widest uppercase text-muted-foreground/60 transition-colors group-hover:text-muted-foreground">
+                  <div className="space-y-3">
+                     <div className="flex items-center gap-3 text-[10px] font-black tracking-[0.2em] uppercase text-muted-foreground/50">
                         <span>{t.date}</span>
-                        <span className="w-1.5 h-1.5 rounded-full bg-border/20" />
-                        <span className="bg-muted px-2 py-0.5 rounded text-[10px] text-foreground/50 border border-border/40 group-hover:border-primary/20 group-hover:text-primary transition-colors">
-                           {t.tag}
-                        </span>
+                        <span className="w-1 h-1 rounded-full bg-border/40" />
+                        <span className="text-primary/60">{t.tag}</span>
                      </div>
 
-                     <h3 className="text-2xl font-black text-foreground group-hover:text-primary transition-colors tracking-tight font-serif leading-tight">
+                     <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors tracking-tight font-serif leading-tight">
                         {t.title}
                      </h3>
 
-                     <p className="text-foreground/70 text-[15px] leading-relaxed line-clamp-2 transition-colors group-hover:text-foreground/90 font-sans">
+                     <p className="text-muted-foreground/80 text-[14px] leading-relaxed line-clamp-2 font-sans">
                         {t.description}
                      </p>
                   </div>

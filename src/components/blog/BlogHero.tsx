@@ -19,8 +19,8 @@ export default function BlogHero() {
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             className="w-full"
          >
-            <h1 className="text-3xl md:text-4xl font-black text-foreground mb-8 tracking-tight leading-snug font-serif line-clamp-2 max-w-full">
-               Welcome to my blog <span className="inline-block animate-pulse">🔴</span> I'm Ashirvad and here I document my latest explorations.
+            <h1 className="text-xl md:text-2xl font-bold text-foreground/90 mb-8 tracking-tight leading-relaxed font-serif line-clamp-2 max-w-full">
+               Welcome to my blog <span className="inline-block scale-75 opacity-70">🔴</span> I'm Ashirvad and here I document my latest explorations.
             </h1>
 
             <div className="flex flex-wrap gap-3">

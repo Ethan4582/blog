@@ -1,55 +1,57 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { allTutorials } from "@/src/lib/mockData";
+import { blogNavigation } from "@/src/lib/mockData";
+import Link from "next/link";
+import clsx from "clsx";
 
 export default function TutorialList() {
-   const categories = Array.from(new Set(allTutorials.map(t => t.category)));
-
    return (
-      <section className="px-10 py-12 pb-24 border-t border-border/10">
-         <h2 className="text-4xl font-black text-foreground mb-12 tracking-tight leading-tight font-serif">
-            All Tutorials
-         </h2>
+      <section className="px-10 py-20 pb-32 border-t border-border/10">
+         <div className="max-w-4xl">
+            <h2 className="text-4xl font-extrabold text-foreground mb-20 tracking-tight font-serif">
+               All Tutorials
+            </h2>
 
-         <div className="w-full space-y-16">
-            {categories.map((cat) => (
-               <div key={cat} className="space-y-6">
-                  <h3 className="text-2xl font-black text-primary/80 tracking-tight font-serif">{cat}</h3>
+            <div className="space-y-20">
+               {blogNavigation.map((group) => (
+                  <div key={group.slug} className="space-y-10">
+                     <h3 className="text-[12px] font-black text-primary/40 uppercase tracking-[0.4em] font-sans">
+                        {group.title}
+                     </h3>
 
-                  <div className="space-y-2 transition-all duration-500">
-                     {allTutorials
-                        .filter(t => t.category === cat)
-                        .map((tutorial, idx) => (
-                           <motion.div
-                              key={`${cat}-${idx}`}
-                              initial={{ opacity: 0, x: -10 }}
-                              whileInView={{ opacity: 1, x: 0 }}
-                              viewport={{ once: true, margin: "-10%" }}
-                              transition={{ delay: idx * 0.05 }}
-                              className="group flex items-center justify-between py-3 border-b border-border/10 relative overflow-hidden cursor-pointer"
-                           >
-                              <span className="text-xl font-black text-foreground/80 group-hover:text-primary transition-all duration-300 font-serif tracking-tight pr-4">
-                                 {tutorial.title}
-                              </span>
+                     <div className="space-y-4">
+                        {[...group.pages].reverse().map((page, idx) => {
+                           const isIntro = group.slug === "getting-started" && page.slug === "intro";
+                           const href = isIntro ? "/blog" : `/blog/${group.slug}/${page.slug}`;
 
-                              <span className="text-[13px] text-muted-foreground/50 group-hover:text-muted-foreground font-mono transition-colors">
-                                 {tutorial.date}
-                              </span>
-
-                              {/* Scroll Underline Animation */}
+                           return (
                               <motion.div
-                                 initial={{ width: 0 }}
-                                 whileInView={{ width: "100%" }}
-                                 viewport={{ once: true, margin: "-10%" }}
-                                 transition={{ duration: 0.8, ease: "easeOut" }}
-                                 className="absolute bottom-0 left-0 h-[2px] bg-primary/20"
-                              />
-                           </motion.div>
-                        ))}
+                                 key={page.slug}
+                                 initial={{ opacity: 0, y: 10 }}
+                                 whileInView={{ opacity: 1, y: 0 }}
+                                 viewport={{ once: true }}
+                                 transition={{ delay: idx * 0.05 }}
+                              >
+                                 <Link
+                                    href={href}
+                                    className="group grid grid-cols-[140px_1fr] items-center py-4 px-2 hover:bg-muted/30 transition-all duration-300 rounded-lg border-b border-border/5"
+                                 >
+                                    <div className="text-[14px] text-muted-foreground/30 font-medium group-hover:text-muted-foreground/60 transition-colors">
+                                       {page.date || "March 3, 2026"}
+                                    </div>
+
+                                    <div className="text-[18px] font-bold text-foreground/80 group-hover:text-primary group-hover:pl-2 transition-all duration-300 font-serif tracking-tight">
+                                       {page.title}
+                                    </div>
+                                 </Link>
+                              </motion.div>
+                           );
+                        })}
+                     </div>
                   </div>
-               </div>
-            ))}
+               ))}
+            </div>
          </div>
       </section>
    );

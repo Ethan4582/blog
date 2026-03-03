@@ -1,8 +1,8 @@
 import type { PostContent } from "../../types";
 
 export const waterRippleData = {
-   author: "Olivier Larose",
-   date: "October 30, 2023",
+   author: "Ashirwad Singh",
+   date: "March 3, 2026",
    difficulty: "Intermediate",
    subtitle: "Rebuild a mesmerising water ripple effect that distorts text on hover.",
    introduction:
@@ -551,8 +551,7 @@ export default function Home() {
                   "`speed` – Controls how fast waves propagate (default: 0.5).",
                   "`damping` – Determines how quickly waves fade out (default: 0.98). Lower values make waves disappear faster.",
                   "`rippleStrength` – Intensity of the ripple created by the mouse (default: 0.5).",
-                  "`textColor` – Color of the displayed text (default: '#fef4b8').",
-                  "`fontSize` – Base font size in pixels (default: 250).",
+              
                   "`offsetMultiplier` – In the render shader, you can adjust `wave * 0.02` to change distortion strength.",
                ],
             },
