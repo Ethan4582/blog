@@ -142,7 +142,7 @@ export default function PageContent({ group, page, post }: PageContentProps) {
                      {page.title}
                   </h1>
 
-                 
+
 
                   {post.introduction && (
                      <p className="text-foreground/75 leading-relaxed text-lg mb-8 max-w-3xl">
@@ -161,15 +161,11 @@ export default function PageContent({ group, page, post }: PageContentProps) {
                            Source code <ArrowUpRight className="w-4 h-4 stroke-[2.5]" />
                         </a>
                      )}
-                     {post.videoTutorial && (
-                        <a href={post.videoTutorial} className="flex items-center gap-1 px-4 py-2 bg-blue-50/50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 rounded-lg text-sm font-semibold transition hover:bg-blue-100/50 dark:hover:bg-blue-500/20">
-                           Video Tutorial <ArrowUpRight className="w-4 h-4 stroke-[2.5]" />
-                        </a>
-                     )}
+
                   </div>
 
                   {/* Video/GIF Demo Section */}
-                  {(post.gif || post.videoDemo || post.videoTutorial) && (
+                  {(post.gif || post.videoDemo) && (
                      <div className="mt-12 rounded-2xl overflow-hidden border border-border/40 bg-card/40 backdrop-blur-sm shadow-2xl aspect-video lg:max-w-4xl mx-auto w-full group relative">
                         {post.gif ? (
                            // eslint-disable-next-line @next/next/no-img-element
@@ -180,7 +176,7 @@ export default function PageContent({ group, page, post }: PageContentProps) {
                            />
                         ) : (
                            <iframe
-                              src={post.videoDemo || post.videoTutorial?.replace("watch?v=", "embed/")}
+                              src={post.videoDemo}
                               className="w-full h-full border-0"
                               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                               allowFullScreen

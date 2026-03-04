@@ -8,9 +8,8 @@ export const waterRippleData = {
   subtitle: "Rebuild a mesmerising water ripple effect that distorts text on hover.",
   introduction:
     "A tutorial rebuilding a mesmerizing water ripple effect that distorts text on hover, creating a fluid, organic interaction using Three.js, React, and custom GLSL shaders.",
-  liveDemo: "http://localhost:3001/gallery/water-ripple",
+  liveDemo: "https://t7labs-demo.pages.dev/gallery/water-ripple",
   sourceCode: "https://github.com/Ethan4582/demo-t7block/blob/master/src/components/Water_Ripple/index.jsx",
-  videoTutorial: assets.tutorials.waterRipple.video,
   gif: assets.tutorials.waterRipple.gif,
   sections: [
     {

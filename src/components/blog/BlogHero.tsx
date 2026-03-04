@@ -7,7 +7,7 @@ import { ArrowUpRight } from "lucide-react";
 export default function BlogHero() {
    const buttons = [
       { label: "GALLERY", href: "/blog/getting-started/gallery" },
-      { label: "DEMOS", href: "/demo" },
+      { label: "DEMOS", href: "https://t7labs-demo.pages.dev/" },
       { label: "ABOUT ME", href: "https://ash-cv.vercel.app/" },
    ];
 
