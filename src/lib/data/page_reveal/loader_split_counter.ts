@@ -1,14 +1,15 @@
 import type { PostContent } from "../../types";
 
+
 export const loaderSplitCounterData: PostContent = {
    author: "SinghAshir65848",
    date: "March 5, 2026",
-   difficulty: "Intermediate",
+   difficulty: "short",
    introduction:
       "Create a full-screen GSAP loader with a rolling three-digit counter and dual progress bars.",
    liveDemo: "https://t7labs-demo.pages.dev/gallery/loader-split-counter",
-   sourceCode: "https://github.com/Ethan4582/blog.tae7labs",
-   gif: "https://media.giphy.com/media/xUPGcSgTq2N24jInD2/giphy.gif", // Placeholder gif
+   sourceCode: "https://github.com/Ethan4582/demo-t7labs/tree/master/src/components/Loader_Split_Counter",
+   gif: "https://res.cloudinary.com/dbgee370f/image/upload/v1772658902/split_loader_comp_qra2tg.gif", 
    sections: [
       {
          id: "initializing-project",
