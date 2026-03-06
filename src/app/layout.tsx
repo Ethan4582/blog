@@ -26,7 +26,7 @@ import Navbar from "@/src/components/navbar/Navbar";
 
 export const metadata: Metadata = {
   metadataBase: new URL("http://localhost:3000"),
-  title: "Tae7labs Dashboard",
+  title: "Tae7labs Blog",
   description: "Explore beautifully crafted components and patterns by Tae7labs.",
   icons: {
     icon: "/assets/darklogo.png",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     apple: "/assets/darklogo.png",
   },
   openGraph: {
-    title: "Tae7labs Dashboard",
+    title: "Tae7labs ",
     description: "Explore beautifully crafted components and patterns by Tae7labs.",
     images: ["/assets/darklogo.png"],
   },
