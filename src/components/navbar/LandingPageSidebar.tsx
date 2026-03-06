@@ -35,23 +35,40 @@ export default function LandingPageSidebar() {
                      transition={{ delay: groupIndex * 0.05, duration: 0.3 }}
                      className="mb-1"
                   >
-                     <button
-                        onClick={() => toggleGroup(group.slug)}
+                     <Link
+                        href={`/landing-pages#${group.slug}`}
+                        onClick={() => {
+                           // Ensure it's open
+                           if (!openGroups[group.slug]) {
+                              setOpenGroups((prev) => ({ ...prev, [group.slug]: true }));
+                           }
+                           // If already open, the Link href handles scrolling
+                        }}
                         className={clsx(
-                           "w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-[13px] font-bold tracking-wide transition-all duration-200 cursor-pointer group font-sans capitalize",
+                           "w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-[13px] font-bold tracking-wide transition-all duration-200 cursor-pointer group font-sans capitalize outline-none",
                            openGroups[group.slug]
                               ? "text-foreground/90 font-black"
                               : "text-foreground/70 hover:text-foreground/90 hover:bg-muted/40 font-semibold"
                         )}
                      >
                         <span>{group.title}</span>
-                        <motion.div
-                           animate={{ rotate: openGroups[group.slug] ? 180 : 0 }}
-                           transition={{ duration: 0.25, ease: "easeInOut" }}
+                        <div
+                           role="button"
+                           onClick={(e) => {
+                              e.preventDefault();
+                              e.stopPropagation();
+                              toggleGroup(group.slug);
+                           }}
+                           className="p-1 -mr-1 rounded-md hover:bg-muted/60 transition-colors"
                         >
-                           <ChevronDown className="w-3.5 h-3.5 text-foreground/30 group-hover:text-foreground/50 transition-colors" />
-                        </motion.div>
-                     </button>
+                           <motion.div
+                              animate={{ rotate: openGroups[group.slug] ? 180 : 0 }}
+                              transition={{ duration: 0.25, ease: "easeInOut" }}
+                           >
+                              <ChevronDown className="w-3.5 h-3.5 text-foreground/30 group-hover:text-foreground/50 transition-colors" />
+                           </motion.div>
+                        </div>
+                     </Link>
 
                      <AnimatePresence initial={false}>
                         {openGroups[group.slug] && (

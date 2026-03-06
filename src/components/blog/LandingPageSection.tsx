@@ -7,7 +7,7 @@ import { landingPages } from "@/src/lib/landing_pageData";
 
 export default function LandingPageSection() {
    // Flat map to get all landing page items
-   const allPages = landingPages.flatMap(group => group.pages);
+   const allPages = landingPages.flatMap(group => group.pages.map(p => ({ ...p, groupSlug: group.slug })));
 
    return (
       <section className="px-10 py-12 pb-12 border-t border-border/10">
@@ -25,14 +25,23 @@ export default function LandingPageSection() {
                   transition={{ delay: i * 0.1, duration: 0.5 }}
                   className="group"
                >
-                  <Link href={`/landing-pages/${landingPages[0].slug}/${page.slug}`} className="cursor-pointer block">
+                  <Link href={`/landing-pages/${page.groupSlug}/${page.slug}`} className="cursor-pointer block">
                      <div className="relative aspect-video rounded-2xl overflow-hidden mb-6 border border-border/5 bg-muted/20 transition-all duration-500 group-hover:border-primary/20 group-hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)]">
                         <Image
                            src={page.image}
                            alt={page.title}
                            fill
-                           className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                           className="object-cover transition-opacity duration-300 group-hover:opacity-0"
                         />
+                        {page.gif && (
+                           <Image
+                              src={page.gif}
+                              alt={`${page.title} animation`}
+                              fill
+                              className="object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                              unoptimized
+                           />
+                        )}
                      </div>
 
                      <div className="space-y-3">
