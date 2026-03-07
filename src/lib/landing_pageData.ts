@@ -18,6 +18,7 @@ export interface LandingPageItem {
 
    categories?: string[];
    previewUrl?: string;       // Link for the preview button
+   sourceCodeUrl?: string;    // Link for the "Use for Free" button
    hasPermission?: boolean;   // If false or undefined, show disclaimer at the bottom
 }
 
@@ -29,52 +30,36 @@ export interface LandingPageGroup {
 
 export const landingPages: LandingPageGroup[] = [
    {
-      title: "AI",
-      slug: "ai",
+      title: "Portfolio",
+      slug: "Portfolio",
       pages: [
+
          {
-            title: "ChatFrame",
-            slug: "chatframe",
-            date: "Mar 01, 2026",
-            description: "ChatFrame Template is a unique landing page for SaaS, agencies, startups, and AI businesses, featuring a modern Home page... Its sleek design ensures a professional, user-friendly experience that engages visitors instantly.",
-            image: assets.tutorials.loaderSplitCounter.image,
-            gif: assets.tutorials.loaderSplitCounter.gif,
+            title: "Amber-Media",
+            slug: "amber-media",
+            date: "Aug 15, 2025",
+            description: "A cinematic studio website for showcasing film projects and creative work.",
+            image: "https://pub-4b0a8f18a97e4b44914872dd0d22870b.r2.dev/amber/amber_hero.png",
+
             images: [
-               assets.tutorials.loaderSplitCounter.image,
-               assets.tutorials.loaderSplitCounter.image,
-               assets.tutorials.loaderSplitCounter.image,
-               assets.tutorials.loaderSplitCounter.image,
+               "https://pub-4b0a8f18a97e4b44914872dd0d22870b.r2.dev/amber/amber_hero.png",
+               'https://pub-4b0a8f18a97e4b44914872dd0d22870b.r2.dev/amber/amber-5%20(5).png',
+              'https://pub-4b0a8f18a97e4b44914872dd0d22870b.r2.dev/amber/amber-5%20(4).png',
+              'https://pub-4b0a8f18a97e4b44914872dd0d22870b.r2.dev/amber/amber-5%20(1).png',
+               'https://pub-4b0a8f18a97e4b44914872dd0d22870b.r2.dev/amber/amber-5%20(2).png'
             ],
-            author: "Peter Design",
-            creatorUrl: "https://example.com/peter-design",
+            author: "Thaer Swailem",
+   creatorUrl: "https://x.com/ThaerSwailem",
+
             frameworkName: "Framer",
-            frameworkUrl: "https://framer.com",
-            twitterHandle: "@peterdesign",
-            twitterUrl: "https://twitter.com/peterdesign",
-            categories: ["AI", "Agency", "SaaS"],
-            previewUrl: "https://example.com",
-            hasPermission: false,
-         },
-         {
-            title: "CallClarity",
-            slug: "callclarity",
-            date: "Feb 15, 2026",
-            description: "Automate Smarter. Grow Faster. With AI. A modern, dark-themed landing page template.",
-            image: assets.tutorials.loaderSplitCounter.image,
-            gif: assets.tutorials.waterRipple.gif,
-            images: [
-               assets.tutorials.loaderSplitCounter.image,
-               assets.tutorials.waterRipple.image,
-               assets.tutorials.waterRipple.image,
-            ],
-            author: "Tae7labs",
-            creatorUrl: "https://github.com/Ethan4582",
-            frameworkName: "Next.js",
-            frameworkUrl: "https://nextjs.org",
-            twitterHandle: "@SinghAshir65848",
-            twitterUrl: "https://x.com/SinghAshir65848",
-            categories: ["AI", "SaaS", "Dark Mode"],
-            previewUrl: "https://example.com",
+            frameworkUrl: "https://www.framer.com/marketplace/templates/amber/",
+
+            twitterHandle: "@ThaerSwailem",
+            twitterUrl: "https://x.com/ThaerSwailem",
+
+            categories: ["Agency", "Portfolio"],
+            previewUrl: "https://amber-media.vercel.app/",
+            sourceCodeUrl: "https://github.com/Ethan4582",
             hasPermission: true,
          }
       ],
@@ -100,6 +85,7 @@ export const landingPages: LandingPageGroup[] = [
             twitterUrl: "https://twitter.com/codegrid",
             categories: ["Health", "SaaS"],
             previewUrl: "https://example.com",
+            sourceCodeUrl: "https://github.com/Ethan4582",
             hasPermission: false,
          },
       ]

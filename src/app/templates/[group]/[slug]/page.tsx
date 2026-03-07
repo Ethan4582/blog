@@ -49,7 +49,7 @@ export default async function LandingPageSlugPage({ params }: LandingPageProps) 
             <header className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-border/10">
                <div>
                   <h1 className="text-3xl md:text-5xl font-semibold tracking-tight text-foreground font-serif">
-                     {pageData.title} <span className="text-muted-foreground/50 font-sans font-light hidden sm:inline-block">— Landing Page</span>
+                     {pageData.title} 
                   </h1>
                </div>
                <div className="flex items-center gap-3 shrink-0">
@@ -64,7 +64,9 @@ export default async function LandingPageSlugPage({ params }: LandingPageProps) 
                      </a>
                   )}
                   <a
-                     href="#"
+                     href={pageData.sourceCodeUrl || "#"}
+                     target="_blank"
+                     rel="noopener noreferrer"
                      className="px-5 py-2.5 rounded-full bg-primary hover:bg-primary/90 text-primary-foreground text-[14px] font-bold tracking-wide transition-colors border border-transparent flex items-center gap-2"
                   >
                      Use for Free
@@ -183,18 +185,9 @@ export default async function LandingPageSlugPage({ params }: LandingPageProps) 
                                  src={template.image}
                                  alt={template.title}
                                  fill
-                                 className="object-cover transition-opacity duration-300 group-hover:opacity-0"
+                                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                                  unoptimized
                               />
-                              {template.gif && (
-                                 <Image
-                                    src={template.gif}
-                                    alt={`${template.title} animation`}
-                                    fill
-                                    className="object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                                    unoptimized
-                                 />
-                              )}
                            </div>
                            <div className="px-2">
                               <h4 className="font-bold text-foreground group-hover:text-primary transition-colors tracking-tight">

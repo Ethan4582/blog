@@ -22,7 +22,6 @@ export default function LandingPageSection() {
                   initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.1, duration: 0.5 }}
                   className="group"
                >
                   <Link href={`/templates/${page.groupSlug}/${page.slug}`} className="cursor-pointer block">
@@ -31,17 +30,8 @@ export default function LandingPageSection() {
                            src={page.image}
                            alt={page.title}
                            fill
-                           className="object-cover transition-opacity duration-300 group-hover:opacity-0"
+                           className="object-cover transition-transform duration-700 group-hover:scale-105"
                         />
-                        {page.gif && (
-                           <Image
-                              src={page.gif}
-                              alt={`${page.title} animation`}
-                              fill
-                              className="object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                              unoptimized
-                           />
-                        )}
                      </div>
 
                      <div className="space-y-3">

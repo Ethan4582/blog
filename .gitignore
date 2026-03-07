@@ -9,7 +9,7 @@
 !.yarn/plugins
 !.yarn/releases
 !.yarn/versions
-
+.env
 notes.md
 # testing
 /coverage
@@ -17,6 +17,7 @@ notes.md
 # next.js
 /.next/
 /out/
+skills
 .agents
 # production
 /build

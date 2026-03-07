@@ -10,7 +10,7 @@ export default function LandingPageGallery() {
       <div className="flex-1 min-w-0 px-10 py-12 font-sans text-foreground">
          <div className="max-w-6xl">
             <h1 className="text-4xl font-extrabold tracking-tight text-foreground mb-12 font-serif">
-               Landing Page Templates
+               Templates
             </h1>
 
             <div className="space-y-16">
@@ -35,18 +35,9 @@ export default function LandingPageGallery() {
                                        src={page.image}
                                        alt={page.title}
                                        fill
-                                       className="object-cover transition-opacity duration-300 group-hover:opacity-0"
+                                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                                        unoptimized
                                     />
-                                    {page.gif && (
-                                       <Image
-                                          src={page.gif}
-                                          alt={`${page.title} animation`}
-                                          fill
-                                          className="object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                                          unoptimized
-                                       />
-                                    )}
                                  </div>
 
                                  <div className="space-y-3">
