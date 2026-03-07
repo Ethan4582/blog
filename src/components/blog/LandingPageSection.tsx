@@ -7,12 +7,18 @@ import { landingPages } from "@/src/lib/landing_pageData";
 
 export default function LandingPageSection() {
    // Flat map to get all landing page items
-   const allPages = landingPages.flatMap(group => group.pages.map(p => ({ ...p, groupSlug: group.slug })));
+   const allPages = landingPages.flatMap(group => group.pages.map(p => ({ ...p, groupSlug: group.slug }))).slice(0, 3);
 
    return (
       <section className="px-10 py-12 pb-12 border-t border-border/10">
          <div className="flex items-center justify-between mb-8">
-            <h2 className="text-3xl font-black text-foreground tracking-tight font-serif">Landing Page Templates</h2>
+            <h2 className="text-3xl font-black text-foreground tracking-tight font-serif">Templates</h2>
+            <Link
+               href="/templates/gallery"
+               className="text-primary hover:text-primary/70 transition-colors text-[13px] font-bold uppercase tracking-widest border-b border-transparent hover:border-primary/30 pb-0.5"
+            >
+               See All
+            </Link>
          </div>
 
          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
