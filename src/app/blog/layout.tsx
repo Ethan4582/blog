@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function BlogLayout({ children }: { children: React.ReactNode }) {
    return (
-      <div className="min-h-screen bg-background text-foreground">
+      <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
          <div className="flex pt-[65px]">
             {/* Left sidebar */}
             <Sidebar />

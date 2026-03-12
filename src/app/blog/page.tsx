@@ -12,12 +12,14 @@ export const metadata: Metadata = {
 
 export default function BlogIndexPage() {
    return (
-      <div className="flex-1 min-w-0 bg-background overflow-y-auto custom-scrollbar">
-         <BlogHero />
-         <RecentTutorials />
-         <LandingPageSection />
-         <FeaturedProducts />
-         <TutorialList />
+      <div className="flex-1 min-w-0 bg-background overflow-y-auto custom-scrollbar relative">
+         <div className="relative z-10 w-full">
+            <BlogHero />
+            <RecentTutorials />
+            <LandingPageSection />
+            <FeaturedProducts />
+            <TutorialList />
+         </div>
       </div>
    );
 }

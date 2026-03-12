@@ -8,57 +8,68 @@
   --font-serif: var(--font-libre-baskerville);
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
-  --background: oklch(1.0000 0 0);
-  --foreground: oklch(0.3211 0 0);
-  --card: oklch(1.0000 0 0);
-  --card-foreground: oklch(0.3211 0 0);
-  --popover: oklch(1.0000 0 0);
-  --popover-foreground: oklch(0.3211 0 0);
-  --primary: oklch(0.6231 0.1880 259.8145);
-  --primary-foreground: oklch(1.0000 0 0);
-  --secondary: oklch(0.9670 0.0029 264.5419);
-  --secondary-foreground: oklch(0.4461 0.0263 256.8018);
-  --muted: oklch(0.9846 0.0017 247.8389);
-  --muted-foreground: oklch(0.5510 0.0234 264.3637);
-  --accent: oklch(0.9514 0.0250 236.8242);
-  --accent-foreground: oklch(0.3791 0.1378 265.5222);
-  --destructive: oklch(0.6368 0.2078 25.3313);
-  --destructive-foreground: oklch(1.0000 0 0);
-  --border: oklch(0.9276 0.0058 264.5313);
-  --input: oklch(0.9276 0.0058 264.5313);
-  --ring: oklch(0.6231 0.1880 259.8145);
+  /* Upgraded Light Mode (Refined White Backgrounds) */
+  --background: #ffffff;
+  --foreground: #070b28; /* Deep Midnight Blue/Black */
+  
+  --card: #f4f4f4; /* White Smoke */
+  --card-foreground: #070b28;
+
+  --popover: #ffffff;
+  --popover-foreground: #070b28;
+
+  /* Vibrant Electric Blue Accent (DO NOT CHANGE) */
+  --primary: #3b82f6; 
+  --primary-foreground: #ffffff;
+
+  /* Existing Secondary (DO NOT CHANGE) */
+  --secondary: #eff2f5;
+  --secondary-foreground: #070b28;
+
+  --muted: #ededed; /* White Smoke */
+  --muted-foreground: #4f576c; /* Dim Gray */
+
+  --accent: #ebeff9; /* Lavender Tint */
+  --accent-foreground: #3b82f6;
+
+  --border: #e8e8e8;
+  --input: #e8e8e8;
+  --ring: #3b82f6;
 
   --radius: 0.5rem;
   --spacing: 0.25rem;
 }
 
 .dark {
-  /* Background lifted from pure black → a cool dark blue-grey */
-  --background: oklch(0.16 0.012 260);
-  --foreground: oklch(0.93 0 0);
+  /* Sleek Dark Mode (from new_theme) */
+  --background: #030611;
+  --foreground: #ffffff;
 
-  --card: oklch(0.19 0.012 260);
-  --card-foreground: oklch(0.93 0 0);
+  --card: #080c1a;
+  --card-foreground: #ffffff;
 
-  --popover: oklch(0.19 0.012 260);
-  --popover-foreground: oklch(0.93 0 0);
+  --popover: #080c1a;
+  --popover-foreground: #ffffff;
 
-  /* Blue primary stays vibrant on the lighter bg */
-  --primary: oklch(0.72 0.16 260);
-  --primary-foreground: oklch(0.14 0.01 260);
+  /* Vibrant Electric Blue Accent */
+  --primary: #3b82f6;
+  --primary-foreground: #ffffff;
 
-  --secondary: oklch(0.23 0.012 260);
-  --secondary-foreground: oklch(0.93 0 0);
+  --secondary: #121626;
+  --secondary-foreground: #ffffff;
 
-  --muted: oklch(0.22 0.012 260);
-  --muted-foreground: oklch(0.62 0.02 260);
+  --muted: #121626;
+  --muted-foreground: #a1a5b5;
 
-  --accent: oklch(0.27 0.04 260);
-  --accent-foreground: oklch(0.93 0 0);
+  --accent: #192642;
+  --accent-foreground: #ffffff;
 
-  --border: oklch(0.27 0.012 260);
-  --input: oklch(0.27 0.012 260);
-  --ring: oklch(0.72 0.16 260);
+  --border: #192038;
+  --input: #192038;
+  --ring: #3b82f6;
+  /* Custom Gradients from new_theme (Updated to Blue) */
+  --gradient-blue: radial-gradient(98% 116% at 1.1% -60%, #3b82f6 0%, #3b82f6 100%);
+  --gradient-silver: linear-gradient(#eff3f5 0%, #ababab 23.8739%, #4d4d4d 45%, #666666 64.7399%, #b5b5b5 85.439%, #fbffff 100%);
 }
 
 @theme inline {
@@ -81,6 +92,9 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+
+  --background-image-gradient-blue: var(--gradient-blue);
+  --background-image-gradient-silver: var(--gradient-silver);
 
   --font-sans: var(--font-sans);
   --font-serif: var(--font-serif);

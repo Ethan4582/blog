@@ -45,7 +45,10 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${inter.variable} ${libreBaskerville.variable} ${robotoSlab.variable}`}>
-      <body className="antialiased font-sans">
+      <body className="antialiased font-sans bg-background text-foreground relative min-h-screen">
+        {/* Layered premium background integration */}
+        <div className="fixed inset-0 bg-[radial-gradient(circle_at_50%_0%,var(--accent)_0%,transparent_50%)] opacity-[0.3] dark:opacity-0 pointer-events-none z-[-1]" />
+        <div className="fixed inset-0 bg-[radial-gradient(var(--primary)_1px,transparent_1px)] opacity-[0.05] dark:opacity-[0.15] [background-size:32px_32px] pointer-events-none z-[-1]" />
         <LenisProvider>
           <Navbar />
           {children}

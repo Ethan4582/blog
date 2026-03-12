@@ -1,0 +1,21 @@
+:root {
+  /* 5 Background Colors */
+  --color-white-smoke: #ededed;
+  --color-lavender: #ebeff9;
+  --color-lavender-1: #ebeff8;
+  --color-white-smoke-1: #f4f4f4;
+  --color-white: #ffffff;
+}
+
+:root {
+  /* 4 Text Colors */
+  --color-black: #000000;
+  --color-black-1: #070b28;
+  --color-dim-gray: #4f576c;
+  --color-royal-blue: #4479e2;
+}
+:root {
+  /* 2 Button Colors */
+  --color-lavender: #ebeff9;
+  --color-black: #000000;
+}

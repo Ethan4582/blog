@@ -49,7 +49,7 @@ export const recentTutorials: Tutorial[] = [
       demoInstructions: "Move your mouse gently over the canvas to see the water ripple effect in action.",
       date: "March 3, 2026",
       tag: "SHADER",
-      category: "shader",
+      category: "misc",
       image: assets.tutorials.waterRipple.image,
       gif: assets.tutorials.waterRipple.gif,
       slug: "water-ripple-hover-effect"
