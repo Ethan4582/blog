@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
    const result = findPageBySlug(slug);
    if (!result) return { title: "Not Found" };
    return {
-      title: `${result.page.title} — ${result.group.title} | tae7labs`,
+      title: `${result.page.title} — ${result.group.title} | t7labs`,
       description: `Read about ${result.page.title} in the ${result.group.title} section.`,
    };
 }

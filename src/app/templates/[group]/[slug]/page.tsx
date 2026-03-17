@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: LandingPageProps): Promise<Me
    const page = groupData?.pages.find((p) => p.slug === slug);
    if (!page) return { title: "Not Found" };
    return {
-      title: `${page.title} — Landing Page Template | Tae7labs`,
+      title: `${page.title} — Landing Page Template | T7labs`,
       description: page.description,
    };
 }

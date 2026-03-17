@@ -25,19 +25,34 @@ const robotoSlab = Roboto_Slab({
 import Navbar from "@/src/components/navbar/Navbar";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("http://localhost:3000"),
-  title: "Tae7labs Blog",
-  description: "Explore beautifully crafted components and patterns by Tae7labs.",
+  title: "T7Labs – Free Landing Page Templates & UI Components",
+  description:
+    "Explore free, modern landing page templates and beautifully crafted UI components by T7Labs. Build faster with high-quality design assets.",
+
   icons: {
-    icon: "/assets/darklogo.png",
-    shortcut: "/assets/darklogo.png",
-    apple: "/assets/darklogo.png",
+    icon: "/assets/bluelogo.png",
+    shortcut: "/assets/bluelogo.png",
+    apple: "/assets/bluelogo.png",
   },
+
   openGraph: {
-    title: "Tae7labs ",
-    description: "Explore beautifully crafted components and patterns by Tae7labs.",
-    images: ["/assets/darklogo.png"],
+    title: "T7Labs – Free Landing Page Templates & UI Components",
+    description:
+      "Discover free landing page templates and modern UI components by T7Labs. Perfect for developers and designers.",
+    images: ["/assets/bluelogo.png"],
+    type: "website",
   },
+
+  keywords: [
+    "landing page templates",
+    "free landing page templates",
+    "UI components",
+    "React components",
+    "Next.js templates",
+    "web design resources",
+    "frontend components",
+    "T7Labs",
+  ],
 };
 
 export default function RootLayout({

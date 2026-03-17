@@ -18,7 +18,7 @@ const sectionVariants = {
 };
 
 export default function PostHero({ post, page }: PostHeroProps) {
-   const handle = post.author?.replace(/\s+/g, "") || "tae7labs";
+   const handle = post.author?.replace(/\s+/g, "") || "t7labs";
 
    return (
       <motion.div variants={sectionVariants} className="mb-16">

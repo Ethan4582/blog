@@ -2,8 +2,8 @@ import Sidebar from "@/src/components/navbar/Sidebar";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-   title: "Tae7labs — Dashboard",
-   description: "Explore components and documentation for Tae7labs.",
+   title: "T7labs ",
+   description: "Explore components and documentation for T7labs.",
 };
 
 export default function BlogLayout({ children }: { children: React.ReactNode }) {

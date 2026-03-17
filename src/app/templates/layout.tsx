@@ -2,7 +2,7 @@ import LandingPageSidebar from "@/src/components/navbar/LandingPageSidebar";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-   title: "Templates | Tae7labs",
+   title: "Templates - T7labs",
    description: "Explore free and premium landing page templates.",
 };
 

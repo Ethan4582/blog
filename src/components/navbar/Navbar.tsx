@@ -33,17 +33,15 @@ export default function Navbar() {
             className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 backdrop-blur-xl bg-background/80 border-b border-border/40"
          >
             <Link href="/blog" className="flex items-center gap-3 group">
-               <div className="relative w-10 h-10 rounded-xl overflow-hidden shadow-lg group-hover:scale-105 transition-transform duration-300">
+               <div className="relative w-10 h-10 rounded-[4px] overflow-hidden shadow-lg group-hover:scale-105 transition-transform duration-300">
                   <Image
-                     src={isDark ? "/assets/darklogo.png" : "/assets/lightlogo.png"}
-                     alt="Tae7labs Logo"
+                     src={isDark ? "/assets/bluelogo.png" : "/assets/logo.png"}
+                     alt="T7labs Logo"
                      fill
                      className="object-cover"
                   />
                </div>
-               <span className="text-foreground/95 font-bold text-[17px] tracking-tight group-hover:text-primary transition-colors font-serif">
-                  Tae7labs
-               </span>
+               
             </Link>
 
             <div className="flex items-center gap-4">

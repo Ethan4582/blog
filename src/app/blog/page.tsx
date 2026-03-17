@@ -6,7 +6,7 @@ import FeaturedProducts from "@/src/components/blog/FeaturedProducts";
 import TutorialList from "@/src/components/blog/TutorialList";
 
 export const metadata: Metadata = {
-   title: "Tae7labs Dashboard",
+   title: "T7labs Blog",
    description: "Explore my latest blog posts, tutorials, and alternative products.",
 };
 
