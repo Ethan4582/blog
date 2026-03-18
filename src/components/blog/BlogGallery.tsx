@@ -7,7 +7,7 @@ import Link from "next/link";
 import { recentTutorials } from "@/src/lib/mockData";
 import clsx from "clsx";
 
-const filters = ["RECENT", "SCROLL", "SHADER", "PAGE REVEAL", "GSAP", "LANDING PAGE"];
+const filters = ["RECENT", "SCROLL", "THREE.JS", "PAGE REVEAL", "GSAP", "MISC"];
 
 export default function BlogGallery() {
    const [activeFilter, setActiveFilter] = useState("RECENT");

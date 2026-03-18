@@ -10,6 +10,7 @@ export const loaderSplitCounterData: PostContent = {
    liveDemo: "https://t7labs-demo.pages.dev/gallery/loader-split-counter",
    sourceCode: "https://github.com/Ethan4582/demo-t7labs/tree/master/src/components/Loader_Split_Counter",
    gif: "https://res.cloudinary.com/dbgee370f/image/upload/v1772658902/split_loader_comp_qra2tg.gif", 
+    notes: "If you face any issues, refer to the working source code provided.",
    sections: [
       {
          id: "initializing-project",

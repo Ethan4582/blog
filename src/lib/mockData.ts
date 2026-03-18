@@ -44,18 +44,43 @@ export const recentTutorials: Tutorial[] = [
    {
       id: "1",
       title: "Infinite 3D Gallery",
-      description: "Tutorial rebuilding a water ripple hover effect that fluidly distorts text using Three.js, GSAP, and GLSL shaders.",
-      galleryDescription: "Mesmerizing ripples interacting with typography for an organic feel.",
-      demoInstructions: "Move your mouse gently over the canvas to see the water ripple effect in action.",
+      description: "Build a 3D image gallery with infinite scrolling, hover effects, and smooth camera controls using Three.js, GSAP, and custom GLSL shaders.",
+      galleryDescription: "A 3D image gallery with infinite scrolling, hover effects, and smooth camera controls.",
+      demoInstructions: "Move your mouse gently over the canvas to see the 3D gallery in action.",
       date: "March 17, 2026",
-      tag: "SHADER",
-      category: "gsap",
+      tag: "THREE.JS",
+      category: "three-js",
       image: assets.tutorials.infinite3DGallery.image,
       gif: assets.tutorials.infinite3DGallery.gif,
       slug: "infinite-3d-gallery"
    },
    {
       id: "2",
+      title: "Scroll Motion Gallery",
+      description: "A dynamic gallery where images rotate and move with scroll using GSAP ScrollTrigger, creating depth and motion. Hover interactions reveal video previews and metadata, enhanced with a subtle Framer Motion parallax effect. ✨",
+      galleryDescription: "A dynamic gallery where images rotate and move with scroll using GSAP ScrollTrigger, creating depth and motion. ✨",
+      demoInstructions: "Scroll through the gallery to see the images rotate and move with scroll.",
+      date: "March 10, 2026",
+      tag: "SCROLL ANIMATION",
+      category: "scroll",
+      image: assets.tutorials.scrollGallery.image,
+      slug: "scroll-motion-gallery"
+   },
+   {
+      id: "3",
+      title: "Sticky Scroll",
+      description: "Build a modern page-reveal loader with a split-counter effect and smooth layout transitions using GSAP and Framer Motion.",
+      galleryDescription:"Popular GSAP ScrollTrigger stacked scroll animation with smooth transitions and subtle depth effects.",
+      demoInstructions: "Scroll down to experience the stacked sections and smooth animations.",
+      date: "March 19, 2026",
+      tag: "GSAP",
+      category: "gsap",
+      image: assets.tutorials.stickyScroll.image,
+      gif: assets.tutorials.stickyScroll.gif,
+      slug: "sticky-scroll"
+   },
+   {
+      id: "4",
       title: "Water Ripple Hover Effect",
       description: "Tutorial rebuilding a water ripple hover effect that fluidly distorts text using Three.js, React, and GLSL shaders.",
       galleryDescription: "Mesmerizing ripples interacting with typography for an organic feel.",
@@ -68,19 +93,7 @@ export const recentTutorials: Tutorial[] = [
       slug: "water-ripple-hover-effect"
    },
    {
-      id: "3",
-      title: "Scroll Motion Gallery",
-      description: "A dynamic gallery where images rotate and move with scroll using GSAP ScrollTrigger, creating depth and motion. Hover interactions reveal video previews and metadata, enhanced with a subtle Framer Motion parallax effect. ✨",
-      galleryDescription: "Mesmerizing ripples interacting with typography for an organic feel.",
-      demoInstructions: "Move your mouse gently over the canvas to see the water ripple effect in action.",
-      date: "March 10, 2026",
-      tag: "SCROLL ANIMATION",
-      category: "scroll-animation",
-      image: assets.tutorials.scrollGallery.image,
-      slug: "scroll-motion-gallery"
-   },
-   {
-      id: "4",
+      id: "5",
       title: "Loader Split Counter",
       description: "Build a modern page-reveal loader with a split-counter effect and smooth layout transitions using GSAP and Framer Motion.",
       galleryDescription: "A high-performance page reveal with a numeric counter splitting into place.",
@@ -92,6 +105,7 @@ export const recentTutorials: Tutorial[] = [
       gif: assets.tutorials.loaderSplitCounter.gif,
       slug: "loader-split-counter"
    },
+   
 ];
 
 
@@ -166,6 +180,17 @@ export const blogNavigation: ToggleGroup[] = [
                { id: "camera-controls", title: "Camera controls & momentum" },
                { id: "performance-optimizations", title: "Performance optimizations" },
                { id: "conclusion", title: "Conclusion" },
+            ],
+         },
+         {
+            title: "Sticky Scroll",
+            slug: "sticky-scroll",
+            date: "March 19, 2026",
+            sections: [
+               { id: "initializing-project", title: "Initializing the project" },
+               { id: "component-structure", title: "Component structure" },
+               { id: "counter-digit-arrays", title: "Preparing the counter digits" },
+               { id: "core-gsap-animations", title: "Core GSAP animations" },
             ],
          },
       ],

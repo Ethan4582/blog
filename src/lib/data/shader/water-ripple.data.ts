@@ -11,6 +11,7 @@ export const waterRippleData: PostContent = {
   liveDemo: "https://t7labs-demo.pages.dev/gallery/water-ripple",
   sourceCode: "https://github.com/Ethan4582/demo-t7labs/tree/master/src/components/Water_Ripple",
   gif: assets.tutorials.waterRipple.gif,
+   notes: "If you face any issues, refer to the working source code provided.",
   sections: [
     {
       id: "initializing-project",

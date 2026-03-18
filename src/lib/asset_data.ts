@@ -7,6 +7,11 @@ export const assets = {
          gif: "https://pub-4b0a8f18a97e4b44914872dd0d22870b.r2.dev/blog_demo/3d_gallery_demo%20_Compress.mp4",
         
       },
+      stickyScroll: {
+         image: "https://pub-4b0a8f18a97e4b44914872dd0d22870b.r2.dev/blog_demo/scroll_trigger.png",
+         gif: "https://pub-4b0a8f18a97e4b44914872dd0d22870b.r2.dev/blog_demo/scroll_trigger_demo_compress.mp4",
+        
+      },
       waterRipple: {
          image: "https://res.cloudinary.com/dbgee370f/image/upload/v1772525777/Screenshot_2026-03-03_124655_lgc6rs.png",
          gif: "https://res.cloudinary.com/dbgee370f/image/upload/v1772560969/water-ripple_comp_lxukvj.gif",

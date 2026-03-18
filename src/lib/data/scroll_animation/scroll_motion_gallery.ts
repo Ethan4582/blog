@@ -11,6 +11,7 @@ export const scrollGalleryData:PostContent = {
   sourceCode: "https://github.com/Ethan4582/demo-t7labs/tree/master/src/components/Scroll_Motion_Gallery",
   image: assets.tutorials.scrollGallery.image,
  gif:assets.tutorials.scrollGallery.gif,
+  notes: "If you face any issues, refer to the working source code provided.",
   sections: [
     {
       id: "initializing-project",

@@ -22,7 +22,7 @@ skills
 .agents
 # production
 /build
-
+notes
 # misc
 .DS_Store
 *.pem
